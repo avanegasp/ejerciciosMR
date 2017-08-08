@@ -3,49 +3,50 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
   </head>
   <body>
-    <div class="">
-      <input id="input_name" type="text" name="" value="">
 
-      <button id="btn-enviar" type="button" name="button">Agregar invitados</button>
-      <button id="btn-eliminar" type="button" name="button">Eliminar invitados</button>
+  <div class="">
+    <div class="">
+      <input id="input_name" type="text" name="nombre" value="" placeholder="Nombre">
+      <button id="btn_enviar" type="button" name="button">Agregar invitados</button>
     </div>
 
-    <ul>
-      <li id="nombres"></li>
-    </ul>
+    <div class="">
+      <ul id="lista">
+        <div class="">
+          <br>
+          <li id="nombres">
+            <span class="glyphicon glyphicon-remove"></span>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
 
-
-
-
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  <!-- Latest compiled and minified JavaScript -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
     <script>
 
-      // document.getElementById('btn-enviar').on('click', function(){
-      //   alert('hola mundo')
-      // })
-
       $('#btn_enviar').on('click', function(){
-        var input = document.getElementById('input_name').value;
-        console.log(input)
-      })
-
-      // $('#btn-enviar').on('click', function(){
-      //   $('li#nombres').append('<li> + input + </li>')
-      // });
-
-
-      $('#btn-eliminar').on('click', function(){
-        $('li:last').remove()
+        var input = ($('input:text[name=nombre]').val());
+        $('li#nombres').append('<li>' + input + '</li>')
       });
 
-
-
-
+      $('ul').on('click','li', function(e){
+        $(e.target).remove()
+      });
 
 
     </script>
