@@ -1,72 +1,53 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Editor Page</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
+    <title></title>
   </head>
   <body>
+    <div class="">
+      <input id="input_name" type="text" name="" value="">
 
-    <div class="container">
-      <header>
-        <h1>codepage</h1>
-      </header>
+      <button id="btn-enviar" type="button" name="button">Agregar invitados</button>
+      <button id="btn-eliminar" type="button" name="button">Eliminar invitados</button>
     </div>
-      <div class="contenedor-formulario">
-        <div class="wrap">
-          <form class="formulario" name="formulario_registro" action="" method="post">
-              <div class="input-group">
-                <label class="label" for="nombre">Nombre Completo</label>
-                <input type="text" class="form-group" id="nombre" name="nombre" value="">
-              </div>
-              <div class="input-group">
-                <label class="email" for="email">Email</label>
-                <input type="email" class="form-group" id="email" name="email" value="">
-              </div>
-              <div class="input-group">
-                <label class="password" for="contraseña" >Contraseña</label>
-                <input type="password" class="form-group" id="contraseña" name="contraseña" value="">
-              </div>
-            <div class="input-enviar">
-              <input type="submit" id="btn-submit" value="Enviar">
-            </div>
-          </form>
-        </div>
-      </div>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  			crossorigin="anonymous"></script>
-  		<script src="js/app.js"></script>
+
+    <ul>
+      <li id="nombres"></li>
+    </ul>
+
+
+
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <script>
+
+      // document.getElementById('btn-enviar').on('click', function(){
+      //   alert('hola mundo')
+      // })
+
+      $('#btn_enviar').on('click', function(){
+        var input = document.getElementById('input_name').value;
+        console.log(input)
+      })
+
+      // $('#btn-enviar').on('click', function(){
+      //   $('li#nombres').append('<li> + input + </li>')
+      // });
+
+
+      $('#btn-eliminar').on('click', function(){
+        $('li:last').remove()
+      });
+
+
+
+
+
+
+    </script>
   </body>
-</html -->
-
-
-
-
-<html>
-<head><title> Ejemplo de los eventos onKeyDown, onKeyPress y onKeyUp </title>
-<script language=JavaScript>
-function DisplayEvent(eventName) {
-   var myMessage = window.document.form1.textarea2.value;
-   myMessage = myMessage + eventName;
-   window.document.form1.textarea2.value = myMessage;
-}
-</script>
-</head>
-<body>
-<FORM NAME=form1>
-   <TEXTAREA ROWS=15 COLS=40 NAME=textarea1
-      onchange="DisplayEvent('onchange\n');"
-      onkeydown="DisplayEvent('onkeydown\n');"
-      onkeypress="DisplayEvent('onkeypress\n');"
-      onkeyup="DisplayEvent('onkeyup\n\n');">
-   </TEXTAREA>
-   <TEXTAREA ROWS=15 COLS=40 NAME=textarea2>
-   </TEXTAREA>
-   <BR><BR>
-   <INPUT TYPE="button" VALUE="Limpiar la Ventana de Eventos"
-      NAME=button1 onclick="window.document.form1.textarea2.value=''">
-</FORM>
-</body>
 </html>
