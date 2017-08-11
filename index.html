@@ -21,12 +21,8 @@
 
     <div class="">
       <ul id="lista">
-        <div class="">
-          <br>
-          <li id="nombres">
-            <span class="glyphicon glyphicon-remove"></span>
-          </li>
-        </div>
+        <li> invitado 1 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></li>
+        <li> invitado 2 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></li>
       </ul>
     </div>
   </div>
@@ -41,11 +37,14 @@
 
       $('#btn_enviar').on('click', function(){
         var input = ($('input:text[name=nombre]').val());
-        $('li#nombres').append('<li>' + input + '</li>')
+        $('ul#lista').append('<li>' + input + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +  '</li>')
       });
 
-      $('ul').on('click','li', function(e){
-        $(e.target).remove()
+      var count = 0;
+      $('ul#lista ').bind('click', function(){
+        var input = ($('input:text[name=nombre]').val());
+        $(this).after('<li>' + input + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +  (++count) + '</li>').remove()
+        console.log(this)
       });
 
 

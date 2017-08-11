@@ -23,7 +23,10 @@ input{
   margin-top: 100px;
 }
 
-li:before{
+li .glyphicon{
+  float: right;
+}
+/*li:before{
 content: "\e080";
  font-family: 'Glyphicons Halflings';
  font-size: 9px;
@@ -31,7 +34,7 @@ content: "\e080";
  margin-top: 4px;
  margin-left: -17px;
  color: black;
-}
+}*/
 
 
 
