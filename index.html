@@ -21,11 +21,13 @@
 
     <div class="">
       <ul id="lista">
+        <br>
         <li> invitado 1 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></li>
         <li> invitado 2 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></li>
       </ul>
     </div>
   </div>
+
 
   <!-- Latest compiled and minified JavaScript -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -40,11 +42,10 @@
         $('ul#lista').append('<li>' + input + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +  '</li>')
       });
 
-      var count = 0;
-      $('ul#lista ').bind('click', function(){
+
+      $('#lista').on('click', 'li', function(){
         var input = ($('input:text[name=nombre]').val());
-        $(this).after('<li>' + input + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +  (++count) + '</li>').remove()
-        console.log(this)
+        $(this).remove();
       });
 
 
