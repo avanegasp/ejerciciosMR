@@ -1,10 +1,15 @@
-$('#btn_enviar').on('click', function(){
-  var input = ($('input:text[name=nombre]').val());
-  $('ul#lista').append('<li>' + input + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +  '</li>')
+
+
+$('#btn-enviar').on('click', function(e){
+  e.preventDefault();
+  var input = $('#input-name').val();
+  $('ul#lista').append('<li class="list-group-item">' + input + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' +  '</li>')
+  $(input).val('');
+  console.log('hola')
 });
 
 
-$('#lista').on('click', 'li', function(){
-  var input = ($('input:text[name=nombre]').val());
-  $(this).remove();
+$('ul#lista').on('click', 'li span', function(){
+  var input = $('#input-name').val();
+  $(this).parent().remove();
 });
