@@ -10,6 +10,8 @@ form{
 
 li{
   list-style: none;
+  margin-right: 128px;
+  margin-left: -17px;
 }
 
 input{
@@ -17,12 +19,13 @@ input{
   padding: 5px 30px;
 }
 
-li .glyphicon{
-  float: right;
-}
-
-#lista{
+/*#lista{
     margin-left: -40px;
     margin-right: 146px;
     margin-top: 20px;
+}*/
+
+svg{
+  float: right;
+  margin-top: 5px;
 }

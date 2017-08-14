@@ -10,18 +10,32 @@
 
   <body>
   <div class="wrapper">
-    <div class="row justify-content-md-center">
-      <form>
-        <input id="input-name" type="text" name="nombre" value="" placeholder="Nombre">
-        <button id="btn-enviar" type="submit" class="btn btn-primary">Agregar invitado</button>
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <form>
+            <input id="input-name" type="text" name="nombre" value="" placeholder="Nombre">
+            <button id="btn-enviar" type="submit" class="btn btn-primary">Agregar invitado</button>
+          </form>
+        </div>
 
-        <ul id="lista">
-          <li class="list-group-item">Invitado 1<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></li>
-          <li class="list-group-item">Invitado 2<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></li>
+<!--
+      <div class="row justify-content-md-center"> -->
+        <ul id="lista" class="list-group" >
+          <div class="row justify-content-md-center">
+            <div class="col-md-4">
+              <li class="list-group-item">Invitado 1 <svg viewBox="0 0 32 32" width="12" height="12" stroke="currentcolor"><path d="M2 30 L30 2 M30 30 L2 2"/></svg></li>
+            </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <div class="col-md-4">
+              <li class="list-group-item">Invitado 2 <svg viewBox="0 0 32 32" width="12" height="12" stroke="currentcolor"><path d="M2 30 L30 2 M30 30 L2 2"/></svg></li>
+            </div>
+          </div>
         </ul>
-      </form>
-    </div>
+      </div>
   </div>
+  <!-- </div> -->
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
