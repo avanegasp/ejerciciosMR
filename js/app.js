@@ -1,6 +1,6 @@
 
 
-$('#btn-enviar').on('submit',function(e){
+$('#btn-enviar').on('click',function(e){
   e.preventDefault();
   console.log('hola');
   var input = $('#input-name').val();
