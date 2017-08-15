@@ -10,11 +10,13 @@ form {
 
 li {
   list-style: none;
-  margin-right: 128px;
-  margin-left: -17px;
 }
 
-.container .li {
+li.list {
+  border: 1px solid red;
+}
+
+ul#lista {
   margin-top: 30px;
 }
 
