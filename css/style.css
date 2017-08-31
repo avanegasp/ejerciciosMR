@@ -1,31 +1,15 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: #f2f2f2;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
 }
-
-form {
-  margin-top: 100px;
+.wrapper {
+  width: 400px;
+  margin: 20px auto 0;
+  text-align: center;
 }
-
-li {
-  list-style: none;
+button {
+  font-size: 16px;
+  padding: 15px;
 }
-
-li.list {
-  border: 1px solid red;
-}
-
-ul#lista {
-  margin-top: 30px;
-}
-
-input {
-  border-radius: 5px;
-  padding: 5px 30px;
-}
-
-svg {
-  float: right;
-  margin-top: 5px;
-}
+table { width: 100%; }
+table th, table td { padding: 7px 5px; border-bottom: 1px solid #ccc; }
