@@ -4,6 +4,7 @@ $('li').click(function(evento){
   $('.tabs').children('li').removeClass('active')
   $tab.addClass('active')
   var hrefAttr = $tab.children('a').attr('href') //nombre del atributo
+  console.log(hrefAttr)
   $('.tabs-content').children('div').removeClass('active')
   $(hrefAttr).addClass('active')
 })
