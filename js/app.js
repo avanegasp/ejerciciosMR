@@ -1,13 +1,39 @@
+//
+// $('li').click(function(evento){
+//   var $tab = $(evento.currentTarget)  //elemento al cúal le hice click (li), es un objeto jquery
+//   $('.tabs').children('li').removeClass('active')
+//   $tab.addClass('active')
+//
+//   var hrefAttr = $tab.children('a').attr('href') //nombre del atributo
+//   console.log(hrefAttr)
+//   $('.tabs-content').children('div').removeClass('active')
+//   $(hrefAttr).addClass('active')
+// })
+//
+// $('li').click(function(evento){
+//   var li = $(evento.currentTarget)
+//   var liAttr = li.attr('data-section')
+//   console.log(liAttr)
+//
+// $('section').removeClass('show')
+// $('section').addClass('show')
+//
+// })
+
+// $('button').click(function(){
+//   $('section').addClass('show')
+// })
+
 
 $('li').click(function(evento){
-  var $tab = $(evento.currentTarget)  //elemento al cúal le hice click (li), es un objeto jquery
-  $('.tabs').children('li').removeClass('active')
-  $tab.addClass('active')
-  var hrefAttr = $tab.children('a').attr('href') //nombre del atributo
-  console.log(hrefAttr)
-  $('.tabs-content').children('div').removeClass('active')
-  $(hrefAttr).addClass('active')
+  var li = $(evento.currentTarget)
+  var liAttr = li.attr('data-section')
+  console.log(liAttr)
+
+  $('section').removeClass('show')
+  $(liAttr).addClass('show')  
 })
+
 
 
 
