@@ -1,13 +1,72 @@
-var songs = [
-  {
-    number: 1, name: "Camila Cabello - Havana",url: "https://www.youtube.com/embed/HCjNJDNzw8Y"},
-  {
-    number: 2, name: "Justin Bieber - Friends",url: "https://www.youtube.com/embed/ctfLLsD84vk"},
-  {
-    number: 3, name: "Taylor Swift - Look What You Make Me Do",url: "https://www.youtube.com/embed/3tmd-ClpJxA"}
-];
+// var num = [22, 3, 55, 2, 11, 9, 5, 27]
+// var resultado = []
+//
+// for (i=0; i < num.length; i++){
+// var number = num[i];
+//     if(number > 10){
+//       resultado.push(number)
+//     }
+// }
+//
+// console.log( resultado)
+//
+// // var elem_p = document.createElement('ul');
+//
+// // Crear nodo de tipo Element
+// var parrafo = document.createElement("ul");
+//
+// // Crear nodo de tipo Text
+// var contenido = document.createTextNode(resultado);
+//
+// // Añadir el nodo Text como hijo del nodo Element
+// parrafo.appendChild(contenido);
+//
+// // Añadir el nodo Element como hijo de la pagina
+// document.body.appendChild(parrafo);
 
- $('body').append('<table></table>');
- $('tbody').append('<tr><td>'+songs[0].number+'</td><td>'+songs[0].name+'</td><td><iframe src="' + songs[0].url + '"></td></tr>')
- $('tbody').append('<tr><td>'+songs[1].number+'</td><td>'+songs[1].name+'</td><td><iframe src="' + songs[1].url + '"></td></tr>')
- $('tbody').append('<tr><td>'+songs[2].number+'</td><td>'+songs[2].name+'</td><td><iframe src="' + songs[2].url + '"></td></tr>')
+
+var libros = ["Libro1", "Libro2"];
+
+// iterar sobre el arreglo
+//  por cada elemento
+//  hacer console.log del elemento
+
+// //PRIMER EJERCICIO
+// var libros = ['libro1', 'libro2']
+//
+//
+// for (var i = 0; i < libros.length; i++){
+//   console.log(libros[i])
+// }
+
+  // var parrafo = document.createElement('p')
+  // var texto = document.createTextNode('hola mundo')
+  // parrafo.appendChild(texto)
+  // document.body.appendChild(parrafo)
+  //
+  // var parrafo = document.createElement('p');
+  // var texto = document.createTextNode('Menos que Macbeth, pero más grande');
+  // parrafo.appendChild(texto);
+  // document.body.appendChild(parrafo);
+  //
+  // var oliva = document.createElement('h1')
+  // var texto = document.createTextNode('es la mejor perrita del mundo')
+  // var oracion = oliva.appendChild(texto)
+  // document.body.appendChild(oracion)
+
+  var body = document.body;
+  var h1 = document.createElement("h1");
+  h1.innerHTML = "Prueba de listas";
+  // lista no ordenada
+  var hul = document.createElement("h3");
+  hul.innerHTML = "Lista no ordenada";
+  var list1 = document.createElement("ul");
+  for(i=0;i<10;i++){
+      var li = document.createElement("li");
+      li.innerHTML = "elemento #"+i;
+      list1.appendChild(li);
+  }
+
+  body.appendChild(h1);
+  body.appendChild(hul);
+  body.appendChild(list1);
