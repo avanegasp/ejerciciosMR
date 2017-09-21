@@ -1,26 +1,6 @@
-h1 {
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-}
+body { text-align: center; }
 
-.music {
+.result {
   display: none;
-}
-
-.music iframe {
-  width: 100%;
-}
-
-.active{
-  display: block;
-}
-
-
-tr:hover{
-  background-color: #32e272;
-  cursor: pointer;
-}
-
-button{
-  cursor: pointer;
+  margin-bottom: 40px;
 }
