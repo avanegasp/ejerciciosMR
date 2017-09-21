@@ -4,3 +4,8 @@ body { text-align: center; }
   display: none;
   margin-bottom: 40px;
 }
+
+#greater{
+  margin-left: 180px;
+  margin-top: 40px;
+}
