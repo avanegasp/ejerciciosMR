@@ -4,56 +4,48 @@ var songs = [
   {
     number: 2, name: "Justin Bieber - Friends",url: "https://www.youtube.com/embed/ctfLLsD84vk"},
   {
-    number: 3, name: "Taylor Swift - Look What You Make Me Do",url: "https://www.youtube.com/embed/3tmd-ClpJxA"}
+    number: 3, name: "Taylor Swift - Look What You Make Me Do",url: "https://www.youtube.com/embed/3tmd-ClpJxA"},
+  {
+    number: 4, name: "Avicii - With Out You",url: "https://www.youtube.com/embed/WRz2MxhAdJo"},
+  {
+    number: 5, name: "Michael Jackson - Blood On The Dance Floor X Dangerous",url: "https://www.youtube.com/embed/aXfokSKZ0QA"}
 ];
 
  $('body').append('<table></table>');
- $('tbody').append('<tr><td>'+songs[0].number+'</td><td>'+songs[0].name+'</td></tr>')
- $('tbody').append('<tr><td>'+songs[1].number+'</td><td>'+songs[1].name+'</td></tr>')
- $('tbody').append('<tr><td>'+songs[2].number+'</td><td>'+songs[2].name+'</td></tr>')
+ for (var i = 0; i < songs.length; i++){
+   var songObject = songs[i]
+    $('tbody').append('<tr data-video="'+songObject.url+'" name="'+songObject.name+'"><td>'+songObject.number+'</td><td>'+songObject.name+'</td></tr>')
+ };
 
-
-  $('td').on('click', function(){
+  $('tr').on('click', function(evento){
+    var $tr = $(evento.currentTarget)
+    var urlVideo = $tr.attr('data-video')
+    var nameVideo = $tr.attr('name')
     $('table').hide()
+
+    var h3 = document.createElement("h3");
+    h3.innerHTML = (nameVideo)
+    document.body.appendChild(h3)
+
     var ifrm = document.createElement("iframe");
-        ifrm.setAttribute("src", "https://www.youtube.com/embed/HCjNJDNzw8Y");
-        ifrm.style.width = "640px";
-        ifrm.style.height = "480px";
+        ifrm.setAttribute("src", urlVideo);
         document.body.appendChild(ifrm);
-    })
+
+    var btn = document.createElement("button");
+    var btnText = document.createTextNode("Regresar a la lista");
+        btn.appendChild(btnText);
+        document.body.appendChild(btn);
+
+  $('button').on('click', function(){
+    $('table').show()
+    $('h3').hide()
+    $('iframe').hide()
+    $('button').hide()
+  })
+});
 
 
 
-
- //
- // var body = document.body;
- // //   var h1 = document.createElement("h1");
- // //   h1.innerHTML = "Prueba de listas";
- //   // lista no ordenada
- //  //  var hul = document.createElement("h3");
- //  //  hul.innerHTML = "Lista no ordenada";
- //   var list1 = document.createElement("ul");
- //   for(i=0;i<10;i++){
- //       var li = document.createElement("li");
- //       li.innerHTML = "elemento #"+i;
- //       list1.appendChild(li);
- //   }
- //   console.log(list1)
- //  //  body.appendChild(h1);
- //  //  body.appendChild(hul);
-
-
-
-
-
-
-
-
-
-
-
-
- //
  //
  // var videos = [
  //   {
