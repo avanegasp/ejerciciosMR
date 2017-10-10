@@ -1,57 +1,34 @@
 var songs = [
-  {
-    number: 1, name: "Camila Cabello - Havana",url: "https://www.youtube.com/embed/HCjNJDNzw8Y"},
-  {
-    number: 2, name: "Justin Bieber - Friends",url: "https://www.youtube.com/embed/ctfLLsD84vk"},
-  {
-    number: 3, name: "Taylor Swift - Look What You Make Me Do",url: "https://www.youtube.com/embed/3tmd-ClpJxA"},
-  {
-    number: 4, name: "Avicii - With Out You",url: "https://www.youtube.com/embed/WRz2MxhAdJo"},
-  {
-    number: 5, name: "Michael Jackson - Blood On The Dance Floor X Dangerous",url: "https://www.youtube.com/embed/aXfokSKZ0QA"}
+  { number: 1, name: "Camila Cabello - Havana", url: "https://www.youtube.com/embed/HCjNJDNzw8Y" },
+  { number: 2, name: "Justin Bieber - Friends", url: "https://www.youtube.com/embed/ctfLLsD84vk" },
+  { number: 3, name: "Taylor Swift - Look What You Make Me Do",url: "https://www.youtube.com/embed/3tmd-ClpJxA" },
+  { number: 4, name: "Avicii - With Out You", url: "https://www.youtube.com/embed/WRz2MxhAdJo" },
+  { number: 5, name: "Michael Jackson - Blood On The Dance Floor X Dangerous", url: "https://www.youtube.com/embed/aXfokSKZ0QA" }
 ];
 
- $('body').append('<table></table>');
- for (var i = 0; i < songs.length; i++){
-   var songObject = songs[i]
-    $('tbody').append('<tr data-video="'+songObject.url+'" name="'+songObject.name+'"><td>'+songObject.number+'</td><td>'+songObject.name+'</td></tr>')
- };
+// Helper function to show list
+function showList() {
+  $('#app').empty().append('<table class="table table-inverse"><thead><tr><th>#</th><th>Name</th></tr></thead><tbody></tbody></table>');
+  for (var i=0; i < songs.length; i++) {
+    var song = songs[i];
+    $('#app table tbody').append(`<tr data-index="${i}"><td>${song.number}</td><td>${song.name}</td></tr>`);
+  }
+}
 
-  $('tr').on('click', function(evento){
-    var $tr = $(evento.currentTarget)
-    var urlVideo = $tr.attr('data-video')
-    var nameVideo = $tr.attr('name')
-    $('table').hide()
+// Helper function to show song
+function showSong(index) {
+  var song = songs[index];
 
-    var h3 = document.createElement("h3");
-    h3.innerHTML = (nameVideo)
-    document.body.appendChild(h3)
+  $('#app').empty();
+  $('#app').append(`<div class="song"><h2>${song.name}</h2><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="${song.url}"></iframe></div><button class="btn btn-primary">Volver</button>`);
+}
 
-    var ifrm = document.createElement("iframe");
-        ifrm.setAttribute("src", urlVideo);
-        document.body.appendChild(ifrm);
-
-    var btn = document.createElement("button");
-    var btnText = document.createTextNode("Regresar a la lista");
-        btn.appendChild(btnText);
-        document.body.appendChild(btn);
-
-  $('button').on('click', function(){
-    $('table').show()
-    $('h3').hide()
-    $('iframe').hide()
-    $('button').hide()
-  })
+// Event handlers
+$('#app').on('click', 'table tbody tr', function() {
+  var index = $(this).data("index");
+  showSong(index);
 });
+$('#app').on('click', 'button', showList);
 
-
-
- //
- // var videos = [
- //   {
- //
- //     // <td><iframe src="' + songs[0].url + '"></td>
- //     // <td><iframe src="' + songs[1].url + '"></td>
- //     // <td><iframe src="' + songs[2].url + '"></td>
- //   }
- // ]
+// Show list
+showList();

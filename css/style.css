@@ -1,35 +1,24 @@
-h1{
+h1 {
   font-size: 1.8rem;
   margin-bottom: 25px;
   text-align: center;
 }
 
-h3 {
+h2 {
   font-size: 1.8rem;
   margin-bottom: 25px;
   text-align: center;
 }
 
-.music {
-  display: none;
-}
+#app { margin-bottom: 80px; }
+.song { text-align: center; }
 
-.music iframe {
-  width: 100%;
-}
-
-tr:hover{
+tbody tr:hover {
   background-color: #32e272;
   cursor: pointer;
 }
 
 button {
   cursor: pointer;
-  margin-left: 800px;
-}
-
-iframe {
-  height: 315px;
-  margin-left: 400px;
-  width: 560px;
+  margin-top: 40px;
 }
